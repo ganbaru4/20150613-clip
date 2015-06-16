@@ -60,7 +60,6 @@
     };
 
 
-
     //クリップタイプの数取得
     var clipTypeSize = 0;
     for(var prop in clipType){
@@ -94,6 +93,7 @@
 
     }
 
+    //クリッピングする形をランダムで決定
     function createCliptype(){
     	var typeNumber = Math.floor(Math.random() * clipTypeSize);
     	switch(typeNumber){
@@ -125,7 +125,6 @@
     		var clipCtx = clipCanvases[i].getContext('2d');
     		clipTypeGB = clipCtx;//グローバル変数に一時保管
     		clipCtx.beginPath();
-    		// clipCtx.arc(50, 50, 50, 0, Math.PI*2);
     		createCliptype();
     		clipCtx.clip();
     		clipCtx.drawImage(images[imageCount], 0, 0, clipCanvasWidth, clipCanvasHeight);
